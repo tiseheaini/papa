@@ -5,15 +5,17 @@
   <title></title>
   <link rel="stylesheet" href="style/normalize.css" media="all">
   <link rel="stylesheet" href="style/index.css" media="all">
+  <script src="script/zepto.min.js"></script>
+  <script src="script/main.js"></script>
 </head>
 <body>
   <div class="main-wrap">
     <!-- note-text -->
     <div class="note-text">
       <img src="images/logo.png" alt="">
-      <form action="article/create.php" class="new-article" id="new-article">
+      <form action="article/create" method="post" class="new-article" id="new-article">
         <textarea id="article-body" name="aritcle[body]" cols="30" rows="10"></textarea>
-        <input type="submit" value="submit">
+        <a class="submit-link" href="javascript:void(0);">提交</a>
       </form>
     </div>
     <!-- end note-text -->
@@ -47,5 +49,9 @@
     </div>
     <!-- end acrticles -->
   </div>
+
+  <script type="text/javascript" charset="utf-8">
+    $("form#new-article").delegate(".submit-link", "click", Papa.submitLink)
+  </script>
 </body>
 </html>

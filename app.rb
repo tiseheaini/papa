@@ -9,3 +9,7 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 get '/' do
   erb :index
 end
+
+post '/article/create' do
+  puts params
+end
