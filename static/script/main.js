@@ -3,7 +3,8 @@ window.Papa = {
     articleLoad: function(){
       var _present = window.Papa;
       _present.articleMoreLock = true;
-      $.get("/article/more", function(data){
+      var lastArticleId = $(".article:last").data("article-id");
+      $.get("/article/more", {last_article_id: lastArticleId}, function(data){
           if (data.status){
             $(".articles").append(data.articles);
             _present.articleMoreLock = false;

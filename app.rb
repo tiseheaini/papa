@@ -9,7 +9,8 @@ DB = Sequel.connect('postgres://tiny:today@localhost/papa')
 Dir["./models/*.rb"].each {|file| require file }
 
 get '/' do
-  @articles = Article.order(Sequel.desc(:created_at))
+  #@articles = Article.order(Sequel.desc(:created_at))
+  @articles = Article.where(:is_delete => false).order(Sequel.desc(:created_at)).limit(12)
   erb :index
 end
 
@@ -28,7 +29,8 @@ post '/article/create' do
 end
 
 get '/article/more' do
-  articles= Article.all
+  #articles= Article.all
+  articles = Article.where("is_delete IS FALSE and id < ?", params[:last_article_id]).order(Sequel.desc(:created_at)).limit(12)
   template_str = ""
 
   (articles || []).each do |article|
