@@ -1,0 +1,15 @@
+body {
+  font-size: 0.8em;
+}
+.note-text {
+  width: 90%;
+}
+.article {
+  width: 90%;
+}
+.article .article-body {
+  width: 72%;
+}
+.article .article-time {
+  width: 13%;
+}

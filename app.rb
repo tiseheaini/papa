@@ -26,3 +26,17 @@ post '/article/create' do
   article.save
   redirect '/'
 end
+
+get '/article/more' do
+  articles= Article.all
+  template_str = ""
+
+  (articles || []).each do |article|
+    template_str << erb("_article".to_sym, :locals => { article: article })
+  end
+  if !articles.empty?
+    json :status => true, :articles => template_str
+  else
+    json :status => false
+  end
+end
