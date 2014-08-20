@@ -4,6 +4,6 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 
 gem 'sequel'
-gem 'sqlite3'
+gem 'pg'
 
 gem 'puma'
