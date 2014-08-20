@@ -22,30 +22,9 @@
 
     <!-- acrticles -->
     <div class="articles">
-      <div class="article">
-        <div class="article-body">播放英语</div>
-        <div class="article-time">12:19</div>
-      </div>
-      <div class="article">
-        <div class="article-body">播放英语</div>
-        <div class="article-time">12:19</div>
-      </div>
-      <div class="article">
-        <div class="article-body">播放英语</div>
-        <div class="article-time">12:19</div>
-      </div>
-      <div class="article">
-        <div class="article-body">播放英语</div>
-        <div class="article-time">12:19</div>
-      </div>
-      <div class="article">
-        <div class="article-body">播放英语</div>
-        <div class="article-time">12:19</div>
-      </div>
-      <div class="article">
-        <div class="article-body">播放英语</div>
-        <div class="article-time">12:19</div>
-      </div>
+      <% (@articles || []).each do |article| %>
+        <%= erb "_article".to_sym, :locals => { article: article } %>
+      <% end %>
     </div>
     <!-- end acrticles -->
   </div>

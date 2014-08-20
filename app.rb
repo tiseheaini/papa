@@ -9,6 +9,7 @@ DB = Sequel.connect('postgres://tiny:today@localhost/papa')
 Dir["./models/*.rb"].each {|file| require file }
 
 get '/' do
+  @articles = Article.order(Sequel.desc(:created_at))
   erb :index
 end
 
