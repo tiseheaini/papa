@@ -12,4 +12,5 @@ end
 
 post '/article/create' do
   puts params
+  redirect '/'
 end
