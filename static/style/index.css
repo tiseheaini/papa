@@ -16,8 +16,9 @@ form#new-article {
   overflow: hidden;
 }
 textarea#article-body {
-  width: 97%;
+  width: 96%;
   margin: 0 auto;
+  padding: 1%;
   display: block;
   border: 1px solid #ccc;
 }
@@ -25,7 +26,7 @@ form .submit-link {
   float: right;
   text-align: center;
   text-decoration: none;
-  margin: 5px 6px 10px auto;
+  margin: 5px 1% 10px auto;
   font-size: 1em;
   border-radius: 5px;
   height: 40px;
