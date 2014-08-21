@@ -3,6 +3,7 @@ require "sinatra/reloader" if development?
 require 'sinatra/contrib'
 require 'erb'
 require 'sequel'
+require 'sanitize'
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 DB = Sequel.connect('postgres://tiny:today@localhost/papa')

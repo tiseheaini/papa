@@ -1,4 +1,4 @@
 <div class="article" data-article-id="<%= article.id %>">
-  <div class="article-body"><%= article.body %></div>
+  <div class="article-body"><%= Sanitize.fragment article.body, Sanitize::Config::RELAXED %></div>
   <div class="article-time"><%= article.created_at.strftime("%H:%M") %></div>
 </div>

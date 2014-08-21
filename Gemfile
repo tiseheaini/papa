@@ -7,3 +7,5 @@ gem 'sequel'
 gem 'pg'
 
 gem 'puma'
+
+gem 'sanitize'
